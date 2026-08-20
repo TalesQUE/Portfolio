@@ -1,0 +1,22 @@
+---
+layout: base.njk
+title: Blog
+permalink: /blog/
+---
+<section class="page-head">
+  <p class="eyebrow">The blog</p>
+  <h1>SEO & marketing notes</h1>
+  <p class="page-dek">Tests, breakdowns, and honest takes on what works right now.</p>
+</section>
+
+<section class="section">
+  <div class="post-list">
+    {% for post in collections.posts %}
+    <a class="post-row" href="{{ post.url }}">
+      <p class="eyebrow">{{ post.data.date | readableDate }}</p>
+      <h2>{{ post.data.title }}</h2>
+      <p>{{ post.data.description }}</p>
+    </a>
+    {% endfor %}
+  </div>
+</section>

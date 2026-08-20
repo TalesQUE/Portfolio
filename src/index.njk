@@ -1,0 +1,43 @@
+---
+layout: base.njk
+title: Home
+---
+<section class="hero">
+  <p class="eyebrow">SEO & Digital Marketing, tracked in public</p>
+  <h1>Rankings don't move by accident.<br>Here's what actually moves them.</h1>
+  <p class="hero-dek">
+    I write about SEO and digital marketing that's been tested on real sites — not
+    recycled advice. I also do this for a living: if you'd rather hand it off,
+    <a href="/services/">see how we can work together</a>.
+  </p>
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="/blog/">Read the blog</a>
+    <a class="btn btn-ghost" href="/services/">Work with me</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>Latest notes</h2>
+    <a class="see-all" href="/blog/">All posts →</a>
+  </div>
+  <div class="post-grid">
+    {% for post in collections.posts %}
+      {% if loop.index <= 3 %}
+      <a class="post-card" href="{{ post.url }}">
+        <p class="eyebrow">{{ post.data.date | readableDate }}</p>
+        <h3>{{ post.data.title }}</h3>
+        <p>{{ post.data.description }}</p>
+      </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section band">
+  <div class="band-inner">
+    <h2>Need this done for your site, not just written about?</h2>
+    <p>I take on a small number of SEO and digital marketing clients at a time — audits, content strategy, and hands-on execution.</p>
+    <a class="btn btn-primary" href="/services/">See services & pricing</a>
+  </div>
+</section>
